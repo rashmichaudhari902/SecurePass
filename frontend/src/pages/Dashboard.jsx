@@ -12,8 +12,9 @@ function Dashboard() {
 
   useEffect(() => {
     fetchPasswords();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   const fetchPasswords = async () => {
     try {
       const res = await api.get(`/api/passwords/${user_id}`);
