@@ -80,3 +80,5 @@ BEGIN
     END IF;
 END$$
 DELIMITER ;
+-- CREATE DATABASE IF NOT EXISTS securepass;
+-- USE securepass;

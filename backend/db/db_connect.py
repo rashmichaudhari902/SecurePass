@@ -3,13 +3,17 @@
 import mysql.connector
 from mysql.connector import Error
 
-DB_CONFIG = {
-    "host":     "localhost",
-    "port":     3306,
-    "database": "securepass",
-    "user":     "root",       # apna MySQL username
-    "password": "Admin@1234"
+import os
+from urllib.parse import urlparse
 
+url = urlparse("mysql://root:NjnVIAQUGMuHSoDEJcSHZekwBCDMEpfq@caboose.proxy.rlwy.net:40149/railway")
+
+DB_CONFIG = {
+    "host":     url.hostname,
+    "port":     url.port,
+    "database": url.path[1:],
+    "user":     url.username,
+    "password": url.password,
 }
 
 def get_connection():
